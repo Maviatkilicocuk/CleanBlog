@@ -1,4 +1,3 @@
-
 <%- include('partials/_header') -%>
 
 <body>
@@ -16,7 +15,7 @@
             <h1> <%= post.title %> </h1>
             <h2 class="subheading"> <%= post.detail %> </h2>
             <span class="meta">Posted by
-              <a href="#">Start Bootstrap</a>
+              <a href="#"><%= post.name %></a>
               on <%= post.dateCreated.toLocaleDateString() %> </span>
           </div>
         </div>
@@ -24,35 +23,34 @@
     </div>
   </header>
 
-<!-- Post Content -->
-<article>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-heading">
-          <h1> <%= post.title %> </h1>
-          <h2 class="subheading"> <%= post.detail %> </h2>
-          <h2 class="subheading"> <%= post.posts %> </h2>
-          <span class="meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on <%= post.dateCreated.toLocaleDateString() %> </span>
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p><%= post.post %></p>
         </div>
-
-        <!-- Update Button -->
-        <div class="text-right">
-          <a href="/posts/edit/<%= post._id %>" class="btn btn-primary">Update Post</a>
-        </div>
-
-        <!-- Delete Button -->
-        <div class="text-right">
-          <a href="/posts/<%= post._id %>?_method=DELETE" class="btn btn-danger"
-            onclick="return confirm('Are you sure you want to delete this post?')">Delete Post</a>
-        </div>
-        
       </div>
+
+      <div class="col-xl-10 col-lg-0">
+        <div class="tm-bg-gray tm-share-box" style="margin-top: 0px;">
+          <div style="display: flex; flex-direction: row; justify-content: flex-end; gap: 20px;">
+            <a href = "/posts/edit/<%= post._id %>" class="btn btn-primary p-0 tm-btn-animate tm-btn-download tm-icon-download"
+              style="width: 80px; height: 80px; display: flex; justify-content: center; align-items: center; border-radius: 12px;">
+              <span>Update</span>
+          </a>	
+
+            <button class="btn btn-danger p-0 tm-btn-animate tm-btn-download tm-icon-download"
+              style="width: 80px; height: 80px; display: flex; justify-content: center; align-items: center; border-radius: 12px;"
+              onclick="return confirm('Are you sure?')">
+              <span>Delete</span>
+            </button>  
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-</article>
+  </article>
 
   <hr>
 
