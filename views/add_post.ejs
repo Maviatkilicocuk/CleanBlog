@@ -27,6 +27,13 @@
         <form action="/post" method="POST" novalidate>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
+              <label>Name</label>
+              <input type="text" class="form-control" placeholder="Name" name="name" required>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
               <label>Post Title</label>
               <input type="text" class="form-control" placeholder="Title" name="title" required>
               <p class="help-block text-danger"></p>
@@ -35,7 +42,12 @@
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Post Detail</label>
-              <textarea rows="5" class="form-control" placeholder="Detail" name="detail" required></textarea>
+              <textarea rows="2" class="form-control" placeholder="Detail" name="detail" required></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="form-group floating-label-form-group controls">
+              <label>Post</label>
+              <textarea rows="15" class="form-control" placeholder="Post" name="post" required></textarea>
               <p class="help-block text-danger"></p>
             </div>
           </div>
