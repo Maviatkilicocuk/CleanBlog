@@ -12,7 +12,12 @@ const pageControllers = require('./controllers/pageControllers');
 app.set("view engine", "ejs");
 
 //Connect DB
-mongoose.connect("mongodb://localhost/cleanblog-test-db");
+mongoose.connect("mongodb+srv://enverbilalbirinci:Enver.5334.@cleanblog.wdcll2v.mongodb.net/?retryWrites=true&w=majority&appName=CleanBlog")
+.then(()=> {
+  console.log('DB bağlantısı sağlandı.')
+}).catch((err)=> {
+  console.log(err)
+})
 
 //Middlerwares
 app.use(express.static("public"));
@@ -37,7 +42,7 @@ app.get("/posts/edit/:id", pageControllers.getEditPage);
 
 
 
-const port = 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Sunucu ${port} portunda başlatıldı.`);
 });
