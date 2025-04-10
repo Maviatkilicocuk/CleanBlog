@@ -45,6 +45,23 @@
 
         <% } %>
 
+                            <!-- Catalog Paging Buttons -->
+                            <div>
+                              <% if (pages > 0) { %>
+                              <ul class="pagination justify-content-center">
+                                  <% for (i=1; i<=pages; i++) { %>
+                                      <% if (i === current) { %>
+                                          <li class="page-item"><a href="/?page=<%=i %>" class="page-link"><%=i %></a></li>
+                                          <% } else if (i < pages) { %>
+                                              <li class="page-item"><a href="/?page=<%=i %>" class="page-link"><%=i %></a></li>
+                                              <% } else  { %>
+                                                  <li class="page-item"><a href="/?page=<%=i %>" class="page-link">></a></li>
+                                  <% } %>
+                                  <% } %>
+                              </ul>
+                          <% } %>
+                          </div>
+
       </div>
     </div>
   </div>
